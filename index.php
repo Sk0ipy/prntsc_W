@@ -1,5 +1,7 @@
 <?php
 
+// Include the database connection
+include_once 'database_connection.php';
 
 ?>
 
@@ -16,10 +18,21 @@
     <script src="js/script.js"></script>
 </head>
 <body>
+<header>
+    <nav class="navbar">
+        <ul class="navbar-container">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="#">Stats</a></li>
+            <li><a href="#">Download</a></li>
+            <li><a href="#">Login/Register</a></li>
+        </ul>
+    </nav>
+</header>
 <main class="main">
     <div class="title">
         <h1>PrintScreen Saves</h1>
     </div>
+    
 
 
 

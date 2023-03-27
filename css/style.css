@@ -6,19 +6,17 @@
 
 
 body {
-    background-color: #151233;
-    color: #ffffff;
+    background-color: #c2bfbf;
+    color: #0e0e0e;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     margin: 0;
     padding: 0;
 }
 
+/*navbar*/
 .navbar {
-    text-align: center;
-    background-color: #333;
-    padding: 10px 0;
-    font-size: 16px;
+    float: right;
 }
 
 .navbar-container {
@@ -45,15 +43,13 @@ body {
 }
 
 
-
-/*main content*/
-
-
-
-
-
-
-
+/*main*/
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
 
 
 
