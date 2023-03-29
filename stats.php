@@ -1,21 +1,20 @@
+<!--This is where all the stats of the program will be in
+for example:
+- how many urls are saved
+- how many working urls are there
+- how many urls are being generated per second
+- what % of the urls are working
+- and a graph of how many urls are there per month
+-->
+
+
 <?php
-
-// Include the database connection
-include_once 'database_connection.php';
-
-// get the urls from the database called working_urls
-
-
-
 
 
 
 
 
 ?>
-
-
-<!doctype html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
@@ -24,7 +23,7 @@ include_once 'database_connection.php';
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PrintScreen Saves</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <script src="js/script_stats.js"></script>
 </head>
 <body>
 <header>
@@ -40,27 +39,7 @@ include_once 'database_connection.php';
 </header>
 <main class="main">
 
-    <div class="title">
-        <h1>PrintScreen Saves</h1>
-        <p>View random printscreens here!</p>
-    </div>
 
-    <!--4 boxes in the center of the screen-->
-    <div class="container">
-        <div class="box1"></div>
-        <div class="box2"></div>
-        <div class="box3"></div>
-        <div class="box4"></div>
-    </div>
-
-
-<!--    button for refresh pics-->
-    <div class="button">
-        <button class="refresh_button" onclick="refresh_screens()">Refresh</button>
-    </div>
-
-
-<!--    -->
 </main>
 
 <footer>
