@@ -1,17 +1,5 @@
 <?php
 
-// Include the database connection
-include_once 'database_connection.php';
-
-// get the urls from the database called working_urls
-
-
-
-
-
-
-
-
 ?>
 
 
