@@ -57,7 +57,7 @@ $next_refresh_time = time() + 60; // current time + 1 minutes
             <td><?php echo $working_data['total_working_urls']?></td>
         </tr>
     </table>
-    <p id='countdown'></p>
+    <p id='countdown' class="countdown"></p>
 </main>
 
 <footer>
