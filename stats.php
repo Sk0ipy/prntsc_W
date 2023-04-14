@@ -1,10 +1,7 @@
 <?php
 
-// connect to your database using PDO
-$dsn = 'mysql:host=localhost;dbname=prntsc_db';
-$username = 'root';
-$password = '';
-$pdo = new PDO($dsn, $username, $password);
+global $pdo;
+include "get_database_pics.php";
 
 // check if urls table exists and has data
 $urls_db = "SELECT COUNT(*) as total_urls FROM urls";
@@ -17,6 +14,12 @@ $working_db = "SELECT COUNT(*) as total_working_urls FROM working_urls";
 $working_result = $pdo->query($working_db);
 $working_data = $working_result->fetch(PDO::FETCH_ASSOC);
 $total_working_urls = $working_data['total_working_urls'] ?? 0;
+
+// check if urls table exists and has data
+$urls_db = "SELECT COUNT(*) as total_urls FROM urls";
+$urls_result = $pdo->query($urls_db);
+$urls_data = $urls_result->fetch(PDO::FETCH_ASSOC);
+
 
 // calculate the next refresh time
 $next_refresh_time = time() + 60; // current time + 1 minutes
@@ -50,11 +53,11 @@ $next_refresh_time = time() + 60; // current time + 1 minutes
     <table>
         <tr>
             <th>Total URLs saved</th>
-            <td><?php echo $urls_data['total_urls']?></td>
+            <td><?php echo $urls_data['total_urls'] ?></td>
         </tr>
         <tr>
             <th>Total working URLs</th>
-            <td><?php echo $working_data['total_working_urls']?></td>
+            <td><?php echo $working_data['total_working_urls'] ?></td>
         </tr>
     </table>
     <p id='countdown' class="countdown"></p>
@@ -68,7 +71,7 @@ $next_refresh_time = time() + 60; // current time + 1 minutes
     // function to update the countdown and refresh the page when it reaches 0
     function updateCountdown() {
         // calculate the number of seconds left
-        var seconds = <?php echo $next_refresh_time?> - Math.floor(Date.now() / 1000);
+        var seconds = <?php echo $next_refresh_time?> -Math.floor(Date.now() / 1000);
 
         // update the countdown element with the number of seconds left
         document.getElementById('countdown').innerHTML = 'Refreshing in ' + seconds + ' seconds';
@@ -85,7 +88,7 @@ $next_refresh_time = time() + 60; // current time + 1 minutes
     // call the countdown function and refresh the data every refresh_interval seconds
     updateCountdown();
     let $refresh_interval = 60;
-    setInterval(function() {
+    setInterval(function () {
         // perform your SQL queries to get data from the database
         var urls_db = 'SELECT COUNT(*) as total_urls FROM urls';
         var working_db = 'SELECT COUNT(*) as total_working_urls FROM working_urls';
@@ -93,7 +96,7 @@ $next_refresh_time = time() + 60; // current time + 1 minutes
         // fetch the data from the database using AJAX
         var xhr = new XMLHttpRequest();
         xhr.open('GET', 'get_stats.php?urls=' + urls_db + '&working=' + working_db);
-        xhr.onload = function() {
+        xhr.onload = function () {
             // update the table with the fetched data
             var stats = JSON.parse(xhr.responseText);
             document.getElementById('total_urls').innerHTML = stats.total_urls;
