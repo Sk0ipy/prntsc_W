@@ -1,15 +1,12 @@
 <?php
-global $working_urls, $sfw;
+global $nsfw;
 include "get_database_pics.php";
 
-$sfw = array_column($sfw, 'url');
-shuffle($sfw);
-
-
+$nsfw = array_column($nsfw, 'url');
+shuffle($nsfw);
 
 
 ?>
-
 <!doctype html>
 <html lang="nl">
 <head>
@@ -28,24 +25,24 @@ shuffle($sfw);
         <ul class="navbar-container">
             <li><a href="index.php">Home</a></li> <!--home-->
             <li><a href="stats.php">Stats</a></li> <!--geeft de stats van bot, over hoe snel en hoeveel je alles heb-->
-            <li><a href="age-verification-popup.html">Adult</a></li> <!--dit kan jke alleen zien als de gebruiker is ingelogd-->
+            <li><a href="age-verification-popup.html">Adult</a></li>
         </ul>
     </nav>
 </header>
 <main class="main">
     <div class="title">
-        <h1>PrintScreen Saves</h1>
-        <p>View random printscreens here!</p>
+        <h1>Adult printscreens</h1>
+        <p>View adult printscreens here!</p>
     </div>
 
 
     <!--4 boxes in the center of the screen-->
     <div class="container">
 
-        <div class="box1"><img class="img" src="<?php echo $sfw[0]; ?>" id="myImg1" onclick="enlargeImage(this)"></div>
-        <div class="box2"><img class="img" src="<?php echo $sfw[1]; ?>" id="myImg2" onclick="enlargeImage(this)"></div>
-        <div class="box3"><img class="img" src="<?php echo $sfw[2]; ?>" id="myImg3" onclick="enlargeImage(this)"></div>
-        <div class="box4"><img class="img" src="<?php echo $sfw[3]; ?>" id="myImg4" onclick="enlargeImage(this)"></div>
+        <div class="box1"><img class="img" src="<?php echo $nsfw[0]; ?>" id="myImg1" onclick="enlargeImage(this)"></div>
+        <div class="box2"><img class="img" src="<?php echo $nsfw[1]; ?>" id="myImg2" onclick="enlargeImage(this)"></div>
+        <div class="box3"><img class="img" src="<?php echo $nsfw[2]; ?>" id="myImg3" onclick="enlargeImage(this)"></div>
+        <div class="box4"><img class="img" src="<?php echo $nsfw[3]; ?>" id="myImg4" onclick="enlargeImage(this)"></div>
     </div>
 
     <div class="enlarged-image-container">
@@ -60,7 +57,6 @@ shuffle($sfw);
 </main>
 <footer>
 </footer>
-
-
 </body>
 </html>
+

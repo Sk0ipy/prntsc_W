@@ -64,49 +64,6 @@ body {
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
-    height: 80%;
-}
+    height: 90%;
 
-.h1 {
-    font-size: 30px;
-    text-align: center;
-}
-
-.stats-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.stats-container .stats {
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    width: 30%;
-    height: 30%;
-}
-
-.stats-container .stats h2 {
-    font-size: 20px;
-    text-align: center;
-}
-
-.stats-container .stats p {
-    font-size: 15px;
-    text-align: center;
-}
-
-/*footer*/
-.footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-}
-
-.footer .disclaimer {
-    font-size: 10px;
 }

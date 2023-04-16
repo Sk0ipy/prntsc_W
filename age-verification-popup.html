@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Age Verification Popup</title>
+  <style>
+    /* CSS code for the popup design */
+    #age-verification-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+<div id="age-verification-popup">
+  <div class="popup-content">
+    <h2>Age Verification</h2>
+    <p>Please enter your birthdate to verify your age:</p>
+    <form method="post" action="age-verification.php">
+      <label for="birthdate">Birth Date:</label>
+      <input type="date" id="birthdate" name="birthdate" required>
+      <br><br>
+      <button type="submit">Verify Age</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
